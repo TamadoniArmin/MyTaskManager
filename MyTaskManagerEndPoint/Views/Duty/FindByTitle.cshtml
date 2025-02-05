@@ -1,0 +1,52 @@
+﻿@using App.Domain.Core.MyTaskManager.Duties.Entities;
+@model Duty
+@{
+	ViewData["Title"] = "Search By CarId";
+}
+<h2>Search</h2>
+<style>
+	body {
+		direction: rtl;
+		font-family: 'IRANSans', Tahoma, sans-serif;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid black;
+		padding: 8px;
+		text-align: right;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+</style>
+<form asp-action="FindByTitle" method="post">
+	<div class="form-group">
+		<label for="title">title</label>
+		<input type="text" class="form-control" id="title" name="title" required />
+	</div>
+	<button type="submit" class="btn btn-primary">جستجو</button>
+</form>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>@Model.Title</td>
+			<td>@Model.Description</td>
+		</tr>
+	</tbody>
+</table>
+@if (TempData["شکست در ویرایش"] != null)
+{
+	<div class="alert alert-danger">@TempData["شکست در ویرایش"] </div>
+}

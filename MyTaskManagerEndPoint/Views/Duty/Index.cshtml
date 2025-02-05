@@ -1,0 +1,50 @@
+﻿@model int
+@{
+	ViewData["Title"] = "User Page";
+}
+<h2>داشبورد کاربر</h2>
+<style>
+	body {
+		direction: rtl;
+		font-family: 'IRANSans', Tahoma, sans-serif;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid black;
+		padding: 8px;
+		text-align: right;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+</style>
+<h1>Hello, @User.Identity.Name!</h1>
+<p>Your User ID is: @ViewBag.UserId</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>      </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>مشاهده ی کل وظایف</td>
+			<td><a class="btn btn-primary" asp-action="GetListOfAllUserDuties" asp-controller="Duty">مشاهده</a></td>
+		</tr>
+		<tr>
+			<td> مشاهده ی لیست وظایف انجام شده</td>
+			<td><a class="btn btn-primary" asp-action="GetCompleted" asp-controller="Duty">مشاهده</a></td>
+		</tr>
+		<tr>
+			<td> (@Model)مشاهده ی لیست وظایف انجام نشده</td>
+			<td><a class="btn btn-primary" asp-action="GetNotCompleted" asp-controller="Duty">مشاهده</a></td>
+		</tr>
+	</tbody>
+</table>
