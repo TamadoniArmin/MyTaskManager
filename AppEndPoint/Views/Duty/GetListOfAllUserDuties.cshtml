@@ -50,7 +50,7 @@
 					<td><a class="btn btn-warning" asp-action="EditDuty" asp-controller="Duty" asp-route-DutyId=@item.Id>ویرایش</a></td>
 					<td><a class="btn btn-success" asp-action="MarkAsCompleted" asp-controller="Duty" asp-route-id=@item.Id>تایید تکمیل وظیفه</a></td>
 				}
-				<td><a class="btn btn-danger" asp-action="DeleteCar" asp-controller="Car" asp-route-DutyId=@item.Id>Delete</a></td>
+				<td><a class="btn btn-danger" asp-action="RemoveDuty" asp-controller="Duty" asp-route-DutyId=@item.Id>حذف</a></td>
 			</tr>
 		}
 	</tbody>
