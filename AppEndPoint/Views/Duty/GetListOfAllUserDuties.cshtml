@@ -1,0 +1,103 @@
+﻿@using App.Domain.Core.MyTaskManager.Duties.Entities;
+@model List<Duty>
+@{
+	ViewData["Title"] = "Duties";
+}
+<h2>لیست وظایف</h2>
+<style>
+	body {
+	direction: rtl;
+	font-family: 'IRANSans', Tahoma, sans-serif;
+	}
+
+	table {
+	width: 100%;
+	border-collapse: collapse;
+	}
+
+	th, td {
+	border: 1px solid black;
+	padding: 8px;
+	text-align: right;
+	}
+
+	th {
+	background-color: #f2f2f2;
+	}
+</style>
+@* <form asp-action="FindByName" method="post">
+	<div class="form-group">
+		<label for="name">Search</label>
+		<input type="text" class="form-control" id="name" name="name" required />
+	</div>
+	<button type="submit" class="btn btn-primary">Continue</button>
+</form> *@
+<table class="table">
+	<thead>
+		<tr>
+			<th>عنوان</th>
+			<th>توضیحات</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Title</td>
+				<td>@item.Description</td>
+				@if(item.IsCompleted==false)
+				{
+					<td><a class="btn btn-warning" asp-action="EditDuty" asp-controller="Duty" asp-route-DutyId=@item.Id>ویرایش</a></td>
+					<td><a class="btn btn-success" asp-action="MarkAsCompleted" asp-controller="Duty" asp-route-id=@item.Id>تایید تکمیل وظیفه</a></td>
+				}
+				<td><a class="btn btn-danger" asp-action="DeleteCar" asp-controller="Car" asp-route-DutyId=@item.Id>Delete</a></td>
+			</tr>
+		}
+	</tbody>
+</table>
+<a class="btn btn-primary" asp-action="Index" asp-controller="Duty">بازگشت به صفحه ی اصلی</a>
+<a class="btn btn-primary" asp-action="AddDuty" asp-controller="Duty">ایجاد وظیفه ی جدید</a>
+
+@if (TempData["موفقیت در ایجاد وظیفه"] != null)
+{
+	<div class="alert alert-success">@TempData["موفقیت در ایجاد وظیفه"] </div>
+}
+@if (TempData["تکمیل ظرفیت"] != null)
+{
+	<div class="alert alert-danger">@TempData["تکمیل ظرفیت"] </div>
+}
+
+
+
+
+@if (TempData["عدم یافتن شناسه ی تسک"] != null)
+{
+	<div class="alert alert-danger">@TempData["عدم یافتن شناسه ی تسک"] </div>
+}
+@if (TempData["موفقت در ویرایش"] != null)
+{
+	<div class="alert alert-success">@TempData["موفقت در ویرایش"] </div>
+}
+
+
+
+@if (TempData["خطا در حذف وظیفه"] != null)
+{
+	<div class="alert alert-danger">@TempData["خطا در حذف وظیفه"] </div>
+}
+@if (TempData["موفقیت در حذف وظیفه"] != null)
+{
+	<div class="alert alert-success">@TempData["موفقیت در حذف وظیفه"] </div>
+}
+
+
+
+@if (TempData["خطا در تغییر وضعیت وظیفه"] != null)
+{
+	<div class="alert alert-danger">@TempData["خطا در تغییر وضعیت وظیفه"] </div>
+}
+@if (TempData["موفقیت در تغییر وضعیت وظیفه"] != null)
+{
+	<div class="alert alert-success">@TempData["موفقیت در تغییر وضعیت وظیفه"] </div>
+}
+

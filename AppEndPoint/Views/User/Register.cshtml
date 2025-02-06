@@ -1,0 +1,64 @@
+﻿@{
+	ViewData["Title"] = "User Register";
+}
+<h2>ثبتنام</h2>
+<style>
+	body {
+		direction: rtl;
+		font-family: 'IRANSans', Tahoma, sans-serif;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid black;
+		padding: 8px;
+		text-align: right;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+</style>
+<form asp-action="Register" method="post">
+	<div class="form-group">
+		<label for="registerModel.Email">Email</label>
+		<input type="text" class="form-control" id="registerModel.Email" name="registerModel.Email" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.FirstName">FirstName</label>
+		<input type="text" class="form-control" id="registerModel.FirstName" name="registerModel.FirstName" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.LastName">LastName</label>
+		<input type="text" class="form-control" id="registerModel.LastName" name="registerModel.LastName" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.PhoneNumber">PhoneNumber</label>
+		<input type="number" class="form-control" id="registerModel.PhoneNumber" name="registerModel.PhoneNumber" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.NationalCode">NationalCode</label>
+		<input type="number" class="form-control" id="registerModel.NationalCode" name="registerModel.NationalCode" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.UserName">UserName</label>
+		<input type="text" class="form-control" id="registerModel.UserName" name="registerModel.UserName" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.Password">Password</label>
+		<input type="password" class="form-control" id="registerModel.Password" name="registerModel.Password" required />
+	</div>
+	<div class="form-group">
+		<label for="registerModel.ConfirmPassword">ConfirmPassword</label>
+		<input type="password" class="form-control" id="registerModel.ConfirmPassword" name="registerModel.ConfirmPassword" required />
+	</div>
+	<button type="submit" class="btn btn-primary">ثبتنام</button>
+</form>
+@if (TempData["Error in Register"] != null)
+{
+	<div class="alert alert-danger">@TempData["Error in Register"] </div>
+}

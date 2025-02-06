@@ -1,0 +1,38 @@
+﻿@{
+	ViewData["Title"] = "Users Login Page";
+}
+<h2>صفحه ی ورود کاربر ها</h2>
+<style>
+	body {
+		direction: rtl;
+		font-family: 'IRANSans', Tahoma, sans-serif;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid black;
+		padding: 8px;
+		text-align: right;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+</style>
+<form asp-action="Login" method="post">
+	<div class="form-group">
+		<label for="userModel.UserName">User Name</label>
+		<input type="text" class="form-control" id="userModel.UserName" name="userModel.UserName" required />
+	</div>
+	<div class="form-group">
+		<label for="userModel.Password">Password</label>
+		<input type="password" class="form-control" id="userModel.Password" name="userModel.Password" required />
+	</div>
+	<button type="submit" class="btn btn-primary">تایید</button>
+	<a asp-action="Register" asp-controller="User">اکانت ندارید؟ یکی بسازید</a>
+</form>
+

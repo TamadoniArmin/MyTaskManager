@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTaskManagerAppService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTaskManagerEndPoint", "MyTaskManagerEndPoint\MyTaskManagerEndPoint.csproj", "{41C4BB4C-C7BD-43BB-B810-535EBD516A63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEndPoint", "AppEndPoint\AppEndPoint.csproj", "{0FF67AF1-89B3-461F-8F0E-493B4602C8CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{41C4BB4C-C7BD-43BB-B810-535EBD516A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C4BB4C-C7BD-43BB-B810-535EBD516A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C4BB4C-C7BD-43BB-B810-535EBD516A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF67AF1-89B3-461F-8F0E-493B4602C8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF67AF1-89B3-461F-8F0E-493B4602C8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF67AF1-89B3-461F-8F0E-493B4602C8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF67AF1-89B3-461F-8F0E-493B4602C8CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +85,6 @@ Global
 		{ECDBE9D5-D6C7-4256-BED8-E4C0A83D986A} = {AC4B3860-B0D4-4A1C-BC1C-1C138C9888AD}
 		{BFCCB1A5-C86E-47F9-9711-16F23CF9631E} = {AC4B3860-B0D4-4A1C-BC1C-1C138C9888AD}
 		{41C4BB4C-C7BD-43BB-B810-535EBD516A63} = {3CC67031-6F32-4520-8339-220DC5BDDBED}
+		{0FF67AF1-89B3-461F-8F0E-493B4602C8CD} = {3CC67031-6F32-4520-8339-220DC5BDDBED}
 	EndGlobalSection
 EndGlobal

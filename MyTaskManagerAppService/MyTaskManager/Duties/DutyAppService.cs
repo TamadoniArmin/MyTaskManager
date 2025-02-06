@@ -32,6 +32,7 @@ namespace MyTaskManagerAppService.MyTaskManager.Duties
                 duty.Description = Description;
                 duty.UserId = user.Id;
                 duty.BelongTo = user;
+                //duty.Id = 2;
                 return _service.AddDuty(duty);
             }
         }

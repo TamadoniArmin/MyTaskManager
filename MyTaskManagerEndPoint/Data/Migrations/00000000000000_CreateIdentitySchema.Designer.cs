@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyTaskManagerEndPoint.Data;
+using MyTaskManagerEndPoint.Data.MyTaskManagerEndPoint.Data;
 
 namespace MyTaskManagerEndPoint.Data.Migrations
 {

@@ -14,6 +14,8 @@ namespace Connection.Configurations
         public void Configure(EntityTypeBuilder<Duty> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).ValueGeneratedOnAdd();
+            builder.HasOne(x => x.BelongTo).WithMany(x => x.UserDuties).HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
